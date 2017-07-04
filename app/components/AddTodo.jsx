@@ -1,26 +1,32 @@
 var React = require('react');
 var {connect} = require('react-redux');
 var actions = require('actions');
+import TextField from 'material-ui/TextField';
+import RaisedButton from 'material-ui/RaisedButton';
 
 var AddTodo = React.createClass({
   onFormSubmit: function(e) {
     e.preventDefault();
     var {dispatch} = this.props;
-    var text = this.refs.todo.value;
-    
+    var text = this.todo.getValue();
+
     if(text.length > 0) {
-      this.refs.todo.value = '';
       dispatch(actions.addTodo(text));
     } else {
-      this.refs.todo.focus();
+      this.todo.focus();
     }
   },
   render: function() {
     return (
       <div>
         <form onSubmit={this.onFormSubmit}>
-          <input name='todo' type='text' ref='todo' placeholder='Введите текст' />
-          <button className='button hollow expanded' type='submit'>Добавить запись</button>
+          <TextField
+            fullWidth={true}
+            type="text"
+            name="todo"
+            floatingLabelText="Введите текст"
+            ref={(input) => { this.todo = input; }}/>
+          <RaisedButton fullWidth={true} primary={true} label="Добавить запись" type="submit"/>
         </form>
       </div>
     );

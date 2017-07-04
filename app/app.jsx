@@ -1,6 +1,7 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 var {Provider} = require('react-redux');
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 var Main = require('Main');
 var actions = require('actions');
@@ -15,16 +16,14 @@ store.subscribe(() => {
 var initialTodos =  TodoAPI.getTodos();
 store.dispatch(actions.addTodos(initialTodos));
 
-// Load foundation
-require('style!css!foundation-sites/dist/css/foundation.min.css')
-$(document).foundation();
-
 // App css
 require('style!css!sass!applicationStyles')
 
 ReactDOM.render(
-  <Provider store={store}>
-    <Main/>
-  </Provider>,
+  <MuiThemeProvider>
+    <Provider store={store}>
+      <Main/>
+    </Provider>
+  </MuiThemeProvider>,
   document.getElementById('app')
 );

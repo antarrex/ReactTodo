@@ -9,12 +9,11 @@ var Main = React.createClass({
   render: function() {
     return (
       <div>
-        <div className="row">
-          <div className="small-centered column small-11 medium-6">
+        <div className="container">
+            <h1 className="main-header">React Todo List</h1>
             <TodoSearch/>
             <TodoList/>
             <AddTodo/>
-          </div>
         </div>
       </div>
     );

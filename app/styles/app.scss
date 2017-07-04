@@ -1,9 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500');
 body {
-  background: #f5f5f5;
-  color: #333;
+  font-family: 'Roboto', sans-serif;
 }
-.small-centered {
-  margin-top: 1rem;
+.main-header {
+  text-align: center;
+}
+.search-bar {
+  margin-bottom: 1rem;
+}
+.container {
+  max-width: 600px;
+  padding: .5rem;
+  margin: 1rem auto;
 }
 .switch-paddle {
   float: left;
@@ -22,15 +30,12 @@ body {
   cursor: pointer;
   border-top: 1px solid #ccc;
   transition: .2s;
-  [type=checkbox] {
-    margin-bottom: 0;
-  }
   &:hover {
     background: #ebebeb;
   }
 }
-.todo-item.completed {
-  color: #ccc;
+.todo-item.completed label {
+  color: #ccc !important;
   text-decoration: line-through;
 }
 .todo-text {

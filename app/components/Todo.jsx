@@ -1,6 +1,7 @@
 var React = require('react');
 var {connect} = require('react-redux');
 var actions = require('actions');
+import Checkbox from 'material-ui/Checkbox';
 
 var Todo = React.createClass({
   render: function() {
@@ -10,8 +11,7 @@ var Todo = React.createClass({
       <div className={todoClass} onClick={() => {
         dispatch(actions.toggleTodo(id));
       }}>
-        <input type="checkbox" checked={completed} />
-        <span className="todo-text">{text}</span>
+        <Checkbox label={text} checked={completed}/>
       </div>
     );
   }
