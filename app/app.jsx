@@ -13,7 +13,7 @@ store.subscribe(() => {
   TodoAPI.setTodos(state.todos);
 });
 
-var initialTodos =  TodoAPI.getTodos();
+var initialTodos = TodoAPI.getTodos();
 store.dispatch(actions.addTodos(initialTodos));
 
 // App css
