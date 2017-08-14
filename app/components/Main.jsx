@@ -11,7 +11,6 @@ var Main = React.createClass({
     return (
       <div>
         <div className="container">
-            <h1 className="main-header">React Todo List</h1>
             <TodoSearch/>
             <TodoList/>
             <AddTodo/>
